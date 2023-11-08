@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/searchbar.css';
 
-const Searchbar = ({ keyword, setKeyword, handleSearch }) => {
+const Searchbar = ({ handleSearch }) => {
+  const [keyword, setKeyword] = useState('');
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleSearch();
+    handleSearch(keyword); // Przekazanie aktualnego keyword do funkcji handleSearch
   };
 
   return (

@@ -4,15 +4,17 @@ import '../styles/loader.css';
 
 const Loader = () => {
   return (
-    <Hearts 
-  height="80"
-  width="80"
-  color="#ef71f6"
-  ariaLabel="hearts-loading"
-  wrapperStyle={{}}
-  wrapperClass=""
-  visible={true}
-/>
+    <div className="loader-container">
+      <Hearts
+        height={80}
+        width={80}
+        color="#ef71f6"
+        ariaLabel="hearts-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+      />
+    </div>
   );
 };
 

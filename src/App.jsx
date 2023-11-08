@@ -22,7 +22,7 @@ const App = () => {
         `https://pixabay.com/api/?key=39260371-83ef64e0aa197167fe58dcdf0&q=${keyword}&per_page=12&page=${page}`
       );
       const data = await response.json();
-      setImages(page === 1 ? data.hits : [...images, ...data.hits]);
+      setImages(prevImages => (page === 1 ? data.hits : [...prevImages, ...data.hits]));
     } catch (error) {
       console.log(error);
     } finally {
@@ -31,7 +31,7 @@ const App = () => {
   };
 
   const handleChangePage = () => {
-    setPage(page + 1);
+    setPage(prevPage => prevPage + 1);
   };
 
   const openModal = (imageUrl) => {
